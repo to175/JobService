@@ -10,9 +10,18 @@ type Props = {};
 class LeftDrawer extends React.Component<Props> {
   constructor(props) {
     super(props);
-    this.state = {email: '', pass: ''};
+    this.state = {email: '', pass: '', isLoggedIn: true};
     //si on ouvre le drawer
     //this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
+  }
+
+  renderMainElement = () => {
+    if(this.state.isLoggedIn){
+      return <Menu navigator={this.props.navigator} />;
+    }
+    else{
+      return <Login navigator={this.props.navigator} />;
+    }
   }
 
   onPressConnexion = () => {
@@ -29,8 +38,7 @@ class LeftDrawer extends React.Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Login />
-        <Menu />
+        {this.renderMainElement()}
       </View>
     );
   }
