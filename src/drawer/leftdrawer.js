@@ -12,7 +12,7 @@ class LeftDrawer extends React.Component<Props> {
     super(props);
     this.state = {email: '', pass: ''};
     //si on ouvre le drawer
-        this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
+    //this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
   }
 
   onPressConnexion = () => {

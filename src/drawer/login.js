@@ -26,7 +26,6 @@ class Login extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
         <View style={styles.button}>
           <Item>
             <Icon active name='at' />
@@ -40,19 +39,11 @@ class Login extends React.Component {
             onPress={this.onPressConnexion}
             title="Connexion élève"/>
         </View>
-      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: 300,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#ffffff',
-  },
   button: {
     marginTop: 16
   }

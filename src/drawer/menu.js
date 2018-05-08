@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Alert, Button} from 'react-native';
+import {StyleSheet, Alert, Button, Dimensions} from 'react-native';
 
 import { Container, Content, List, ListItem, Header, Icon, Item, Input, View, Left, Right, Body, Title, Subtitle, Card, CardItem, Thumbnail, Text } from 'native-base';
 
@@ -17,24 +17,36 @@ class Menu extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-
-      </View>
+      <Container>
+        <Content>
+          <List>
+            <ListItem style={{ width:Dimensions.get('window').width-80 }} icon>
+              <Left>
+                <Icon name="wifi" />
+              </Left>
+              <Body>
+                <Text>Candidature</Text>
+              </Body>
+              <Right>
+                <Icon name="arrow-forward" />
+              </Right>
+            </ListItem>
+            <ListItem style={{ width:Dimensions.get('window').width-80 }} icon>
+              <Left>
+                <Icon name="bluetooth" />
+              </Left>
+              <Body>
+                <Text>Missions  </Text>
+              </Body>
+              <Right>
+                <Icon name="arrow-forward" />
+              </Right>
+            </ListItem>
+          </List>
+        </Content>
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: 300,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#ffffff',
-  },
-  button: {
-    marginTop: 16
-  }
-});
 
 export default Menu;
